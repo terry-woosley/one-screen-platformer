@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const ACCELERATION = 500
+const ACCELERATION = 750
 const MAX_SPEED = 250
-const FRICTION = 1000
+const FRICTION = 2000
 const GRAVITY = 700
 const JUMP = 250
 
@@ -21,7 +21,7 @@ func _process(delta):
 		velocity.x = move_toward(velocity.x, MAX_SPEED, ACCELERATION * delta)
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = move_toward(velocity.x, -MAX_SPEED, ACCELERATION * delta)
-	else:
+	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 
 	if Input.is_action_pressed("jump") and is_on_floor():
