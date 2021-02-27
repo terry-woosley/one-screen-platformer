@@ -1,8 +1,8 @@
-## one-screen-platformer
+# one-screen-platformer
  
-# Assets Used
+## Assets Used
 - Dungeon Tilemap - [Open Game Art File](https://opengameart.org/content/16x16-platformer-tileset) - Attribution: [Angel on Open Game Art](https://opengameart.org/users/angel)
 - Animated Goblin, Key, Gem - Attribution: Amber (my wife)
 
-# Github Pages Link
-- [Play Here]()
+## Github Pages Link
+- [Play Here](https://terry-woosley.github.io/one-screen-platformer/)
