@@ -18,15 +18,21 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = move_toward(velocity.x, MAX_SPEED, ACCELERATION * delta)
-		$Sprite.flip_h = false
+		$AnimatedSprite.flip_h = false
+		if is_on_floor():
+			$AnimatedSprite.play("Run")
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = move_toward(velocity.x, -MAX_SPEED, ACCELERATION * delta)
-		$Sprite.flip_h = true
+		$AnimatedSprite.flip_h = true
+		if is_on_floor():
+			$AnimatedSprite.play("Run")
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+		$AnimatedSprite.play("Idle")
 
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = -JUMP
+		$AnimatedSprite.play("Jump")
 
 func _physics_process(delta):
 	#falling
